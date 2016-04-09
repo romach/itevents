@@ -25,8 +25,13 @@ after_script:
 - test -f ./crawler/build/reports/pmd/main.html && cat ./crawler/build/reports/pmd/main.html #todo delete me
 - find -name \*.html | grep reports | grep 'findbugs\|checkstyle\|pmd' #todo delete me
 - git ls-files -o
-- curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
-- artifacts upload crawler/build/reports/findbugs/main.html
+#- curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
+#- artifacts upload crawler/build/reports/findbugs/main.html
+
+addons:
+  artifacts:
+    paths:
+        - crawler/build/reports/findbugs/main.html
 
 deploy:
   provider: openshift
