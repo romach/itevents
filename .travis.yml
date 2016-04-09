@@ -31,7 +31,8 @@ after_script:
 addons:
   artifacts:
     paths:
-        - crawler/build/reports/findbugs/main.html
+      - crawler/build/reports/findbugs/main.html
+    target_paths: $TRAVIS_BUILD_NUMBER
 
 deploy:
   provider: openshift
