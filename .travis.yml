@@ -26,6 +26,8 @@ after_script:
 - find -name \*.html | grep reports | grep 'findbugs\|checkstyle\|pmd' #todo delete me
 - git ls-files -o
 
+
+
 addons:
   artifacts:
     paths:
