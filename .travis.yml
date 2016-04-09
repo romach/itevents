@@ -16,11 +16,11 @@ before_install:
 - cp .travis/properties/test-travis.properties restservice/src/test/resources/test-local.properties
 
 before_script:
-- psql --version
 - psql -c 'create database test;' -U postgres
 
 script:
-- ./gradlew
+- ./gradle check
+- ./gradle test
 
 addons:
   artifacts:
