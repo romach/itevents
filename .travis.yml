@@ -29,6 +29,8 @@ after_script:
 addons:
   artifacts:
     s3_region: eu-central-1
+    paths:
+        - $HOME/crawler/build/reports/pmd/main.html
 
 deploy:
   provider: openshift
