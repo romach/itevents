@@ -25,6 +25,7 @@ after_script:
 - test -f ./crawler/build/reports/pmd/main.html && cat ./crawler/build/reports/pmd/main.html #todo delete me
 - find -name \*.html | grep reports | grep 'findbugs\|checkstyle\|pmd' #todo delete me
 - git ls-files -o
+- for i in $(.travis/aws/reports-list.sh); do echo $AWS_URL/$ARTIFACTS_BUCKET/$TRAVIS_BUILD_NUMBER${i:1}; done
 
 addons:
   artifacts:
