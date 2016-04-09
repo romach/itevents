@@ -22,7 +22,7 @@ script:
 - gradle
 
 after_script:
-- echo 'You can show reports here:'; .travis/reports/get-reports-links.sh
+- gradle -v
 
 addons:
   artifacts:
