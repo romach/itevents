@@ -28,9 +28,9 @@ after_script:
 
 addons:
   artifacts:
-    s3_region: "eu-central-1"
+    s3_region: eu-central-1
     target_paths: $TRAVIS_BUILD_NUMBER
-    working_dir: WORKING_DIR
+    working_dir: $WORKING_DIR
 
 deploy:
   provider: openshift
