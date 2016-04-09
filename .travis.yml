@@ -31,11 +31,6 @@ addons:
     target_paths: $TRAVIS_BUILD_NUMBER
     working_dir: WORKING_DIR
 
-addons:
-  artifacts:
-    paths:
-    - $(find -name \*.html | grep reports | grep 'findbugs\|checkstyle\|pmd' | tr "\n" ":")
-
 deploy:
   provider: openshift
   user: $OPENSHIFT_USER
