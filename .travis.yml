@@ -29,7 +29,7 @@ after_script:
 addons:
   artifacts:
     paths:
-      - $(find -name \*.html | grep reports | grep 'findbugs\|checkstyle\|pmd' | tr "\n" ":")
+      - $(.travis/aws/reports-list.sh | tr "\n" ":")
     target_paths: $TRAVIS_BUILD_NUMBER
 
 deploy:
