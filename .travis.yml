@@ -26,7 +26,10 @@ after_script:
 - find -name \*.html | grep reports | grep 'findbugs\|checkstyle\|pmd' #todo delete me
 - git ls-files -o
 
-
+addons:
+  artifacts:
+    target_paths: $TRAVIS_BUILD_NUMBER
+    working_dir: WORKING_DIR
 
 addons:
   artifacts:
